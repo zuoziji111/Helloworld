@@ -3,21 +3,17 @@ name: C/C++ CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: configure
-      run: gcc Helloworld.c -o test
+      run: gcc Helloworld.c -o build/test
       
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
         name: test
-        path: .
+        path: build/test
