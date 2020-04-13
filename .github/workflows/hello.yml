@@ -13,7 +13,7 @@ jobs:
       run: cd src && gcc Helloworld.c -o ../build/test_c
     
     - name: build_cpp
-      run: cd src && g++ Helloworld.cpp -o ../build/test_cpp
+      run:  g++ Helloworld.cpp -o ../build/test_cpp
       
     - name : Upload artifact
       uses: actions/upload-artifact@master
